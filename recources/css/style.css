@@ -1,0 +1,626 @@
+/*============================================================================================================
+        Template Name: Shakhawat Hossen - Portfolio Template.
+        Description: An Awesome Portfolio Temptale.
+        Athore: Shakhawat Hossen.
+        Support: shsourov2000@gmail.com.
+        Version: 1.0
+============================================================================================================*/
+
+/*============================================================================================================
+                                                CSS INDEX
+                                            =================
+        1. Common CSS
+        2. Header Section
+        3. About Section 
+        4. Services Section
+        5. Skills Section
+        6. Portfolio Section
+        7. Education Section
+        8. Contact Section 
+        9. Footer Section
+============================================================================================================*/
+
+/*============================================================================================================
+        1. Common CSS    
+============================================================================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #fff;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    line-height: 24px;
+    scroll-behavior: smooth;
+    margin-left: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 400%;
+    text-transform: capitalize;
+    color: #000;
+}
+
+h3 {
+    font-size: 260%;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+h4 {
+    font-size: 160%;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+p {
+    margin: 0;
+}
+
+/* Reusable CSS */
+
+.row {
+    max-width: 1180px;
+    margin: auto;
+}
+
+section {
+    padding: 120px 0;
+}
+
+.btn:link,
+.btn:visited,
+.btn {
+    width: 200px;
+    background: #ff2b4a;
+    color: #fff;
+    font-size: 160%;
+    text-transform: capitalize;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid #ff2b4a;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+    background: transparent;
+    color: #ff2b4a;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title p {
+    font-size: 160%;
+    color: #000;
+    margin-top: 20px;
+}
+
+/*============================================================================================================
+        2. Header Section    
+============================================================================================================*/
+
+#home {
+    height: 100vh;
+    background: linear-gradient(rgba(128, 87, 156, 0.9), rgba(128, 87, 156, 0.9)), url('../css/image/bg2.jpg') no-repeat center / cover;
+    position: relative;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    margin-top: 30px;
+    float: left;
+}
+
+.main-nav {
+    float: right;
+    margin-top: 45px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 25px;  
+}
+
+.main-nav li:first-child {
+    margin-left: 0;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 160%;
+    background: rgba(100, 58, 121, 0);
+    padding: 5px 15px;
+    border-radius: 3px;
+    display: inline-block;
+    transition: 1s;
+}
+
+.main-nav li:hover a:link,
+.main-nav li:hover a:visited {
+    background: rgba(100, 58, 121, 1);
+}
+
+.main-nav li a.active {
+    background: rgba(100, 58, 121, 1);
+}
+
+/* Sticky Navigation*/
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(142, 89, 153, 0.9);
+    padding: 5px 0;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+}
+
+.sticky .logo {
+    margin-top: 0;
+}
+
+.sticky .main-nav {
+    margin-top: 15px;
+}
+
+/* Mobile Menu*/
+.mobile-menu span {
+    position: relative;
+    color: #fff;
+    font-size: 600%;
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.overlay {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 99999;
+    overflow-x: hidden;
+    transition: .5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay a {
+    text-decoration: none;
+    display: block;
+    font-size: 300%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999;
+    padding: 10px 0;
+}
+
+.overlay a:hover {
+    color: #fff;
+}
+
+.overlay .close-btn {
+    position: absolute;
+    font-size: 600%;
+    right: 30px;
+    top: 20px;
+}
+
+.sticky .mobile-menu span {
+    margin-top: 0;
+    line-height: 1;
+}
+
+.hero-text-box {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hero-text-box h4 {
+    font-size: 500%;
+    color: #fff;
+}
+
+.hero-text-box h1 {
+    font-size: 600%;
+    font-weight: 200;
+    color: #fff;
+}
+
+#home .ah-headline .ah-words-wrapper::after {
+    background: #fff;
+}
+
+.social-icon ul li {
+    display: inline-block;
+}
+
+.social-icon ul li a {
+    color: #fff;
+    font-size: 200%;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    line-height: 26px;
+}
+
+.social-icon ul li a:hover {
+    color: #ff2b4a;
+}
+
+/*============================================================================================================
+        3. About Section    
+============================================================================================================*/
+
+.grid-about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 60px;
+}
+
+.saku {
+    width: 100%;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.intro {
+    font-size: 180%;
+    color: #222;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 160%;
+    color: #4c4c4c;
+    margin: 40px 0;
+    text-align: justify;
+    width: 90%;
+}
+
+/*============================================================================================================
+        4. Services Section    
+============================================================================================================*/
+
+#service {
+    background: linear-gradient(rgba(26, 180, 153, 0.8), rgba(26, 180, 153, 0.8)), url(../css/image/services-bg.jpg) no-repeat top / cover;
+    background-attachment: fixed;
+    
+}
+
+.grid-service-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.grid-service-item {
+    padding: 80px 0;   
+}
+
+.grid-service-item h4 {
+    text-transform: uppercase;
+    margin-top: 40px;
+    color: #fff;
+}
+
+.grid-service-item:nth-child(1) {
+    background: #10c6fc;
+}
+
+.grid-service-item:nth-child(2) {
+    background: #835aeb;
+}
+
+.grid-service-item:nth-child(3) {
+    background: #002453;
+}
+
+.grid-service-item:nth-child(4) {
+    background: #ff2b4a;
+}
+
+/*============================================================================================================
+        5. Skills Section    
+============================================================================================================*/
+#skill {
+    text-align: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../css/image/skill-bg.jpg) no-repeat top / cover;
+}
+
+
+.grid-skill-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+
+.grid-skill-item h3 {
+    color: #000;
+    font-size: 200%;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+svg.radial-progress circle {
+    stroke-width: 5;
+}
+
+svg.radial-progress text {
+    fill: #000;
+    font-size: 150%;
+}
+
+svg.html circle {
+    stroke: #30BAE7;
+}
+
+svg.css circle {
+    stroke: #D74680;
+}
+
+svg.javascript circle {
+    stroke: #15C7A8;
+}
+
+svg.jquery circle {
+    stroke: #EB7D4B;
+}
+
+/*============================================================================================================
+        6. Portfolio Section   
+============================================================================================================*/
+
+#portfolio {
+    background: linear-gradient(rgba(255, 224, 163, 0.8), rgba(255, 224, 163, 0.8)), url(../css/image/portfolio-bg.jpg) no-repeat center / cover ;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.portfolio-filter {
+    margin: 40px 0;
+}
+
+.portfolio-filter button {
+    background: #EBC985;
+    font-size: 180%;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 5px;
+    margin: 5px 5px;
+    transition: .5s;
+}
+
+.portfolio-filter button:hover {
+    cursor: pointer;
+    box-shadow: inset 0 4px 5px rgba(111, 111, 111, 0.5);
+}
+
+#portfolio .mixitup-control-active {
+    background: #fff;
+}
+
+.grid-portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(250px, auto);
+    
+}
+
+.grid-portfolio-item {
+    background: #000;
+}
+
+.grid-portfolio-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-portfolio-item:nth-child(5) {
+    grid-column: 1/3;
+    height: 250px;
+}
+
+/* Lightbox */
+
+.uk-lightbox-toolbar {
+    font-size: 160%;
+}
+
+.uk-lightbox {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/*============================================================================================================
+        7. Education Section   
+============================================================================================================*/
+
+#education {
+    background: linear-gradient(rgba(217, 86, 138, 0.8), rgba(217, 86, 138, 0.8)), url(../css/image/team-bg.jpg) no-repeat center / cover ;
+}
+
+.grid-education-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.grid-education-item {
+    background: #5f657e;
+    padding: 50px 30px;
+}
+
+.training h4,
+.education h4 {
+    font-size: 180%;
+    color: #fff;
+}
+
+.training span {
+    font-size: 160%;
+    color: #fff;
+    display: inline-block;
+    margin: 15px 0;
+}
+
+.training p,
+.education p {
+    font-size: 160%;
+    color: #fff;
+    text-align: justify;
+}
+
+.education h4 {
+    margin-bottom: 5px;
+}
+
+#education hr {
+    border: 0;
+    border-bottom: 1px solid #fff;
+    margin: 30px 0;
+}
+
+/*============================================================================================================
+        8. Contact Section   
+============================================================================================================*/
+
+#contact {
+    background: linear-gradient(rgba(100, 203, 192, 0.8), rgba(100, 203, 192, 0.8)), url(../css/image/contact-bg.jpg) no-repeat center / cover;
+    background-attachment: fixed;
+}
+
+.grid-contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px
+}
+
+.grid-contact-item:nth-child(1) {
+    background: #5e657e;
+    padding: 40px 30px;
+}
+
+.single-form input[type="text"],
+.single-form input[type="email"],
+.single-form textarea {
+    width: 100%;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 140%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.single-form-btn {
+    text-align: right;
+    margin-top: 30px;
+}
+
+
+.nested-grid-contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+}
+
+.nested-grid-contact-item {
+    background: #5e657e;
+    padding: 50px 30px;
+}
+
+.nested-grid-contact-item p,
+.nested-grid-contact-item address {
+    font-size: 160%;
+    color: #fff;
+}
+
+/*============================================================================================================
+        9. Footer Section   
+============================================================================================================*/
+
+#footer {
+    background: #222;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#footer .social-icon ul li a {
+    background: none;
+}
+
+#footer .social-icon ul li a ion-icon {
+    border-right: 1px solid #fff;
+    padding: 0 10px;
+}
+
+.copyright {
+    font-size: 120%;
+    color: #fff;
+}
