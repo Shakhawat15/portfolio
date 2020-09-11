@@ -28,6 +28,18 @@ $(document).ready(function(){
     //MixitUp:
     var mixer = mixitup('.container');
     
+      //Smooth Scroll For IE/EDGE/SAFARI:
+    $("a").on('click',function(event){
+       if (this.hash!=""){
+           event.preventDefault();
+           var hash=this.hash;
+           $('html,body').animate({
+              scrollTop:$(hash).offset().top
+           },800,function(){
+               window.location.hash=hash;
+           });
+       } 
+    });
     
     
 });
@@ -42,11 +54,3 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%"
 }
 
-// Scrolify:
-
- $(function() {
-     $.scrollify({
-        section : ".scrolify",
-        setHeights: false,
-     });
-});
